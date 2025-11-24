@@ -11,11 +11,12 @@
         </tr>
     </thead>
     <tbody>
-<?php
-$result = $conn->query("SELECT * FROM persons WHERE user_id=".$_SESSION['user_id']);
+        <?php
 
-while ($row = $result->fetch_assoc()) {
-    echo "<tr>
+        $result = $conn->query("SELECT * FROM persons WHERE user_id=" . $_SESSION['user_id']);
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>
         <td>{$row['id']}</td>
         <td>{$row['name']}</td>
         <td>{$row['email']}</td>
@@ -27,13 +28,13 @@ while ($row = $result->fetch_assoc()) {
             <button class='btn btn-sm btn-danger' onclick='deleteUser({$row['id']})'>
                 <i class='bi bi-trash-fill'></i>
             </button>
-            <button class='btn btn-sm btn-info' onclick='showRecord(".$row['id'].")'>
+            <button class='btn btn-sm btn-info' onclick='showRecord(" . $row['id'] . ")'>
                 <i class='bi bi-eye-fill'></i>
             </button>
         </td>
     </tr>";
-}
-?>
+        }
+        ?>
     </tbody>
 </table>
 
