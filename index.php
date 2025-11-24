@@ -15,21 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
 
-    // if ($result && password_verify($password, $result['password'])) {
-    //     $_SESSION['user_id'] = $result['id'];
-    //     header("Location: home.php");
-    //     exit;
-    // } else {
-    //     $error = "Invalid login";
-    // }
-
-    if ($result && md5($password) === $result['password']) {
+    if ($result && password_verify($password, $result['password'])) {
         $_SESSION['user_id'] = $result['id'];
         header("Location: home.php");
         exit;
     } else {
         $error = "Invalid login";
     }
+
+    // if ($result && md5($password) === $result['password']) {
+    //     $_SESSION['user_id'] = $result['id'];
+    //     header("Location: home.php");
+    //     exit;
+    // } else {
+    //     $error = "Invalid login";
+    // }
 }
 ?>
 

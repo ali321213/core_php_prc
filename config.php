@@ -6,14 +6,14 @@ if (session_status() === PHP_SESSION_NONE) {
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "crud_system";
+$db   = "crud_app";
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("DB Error: " . $conn->connect_error);
 }
 
-function secure($data) {
+function secure($data)
+{
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
-?>

@@ -1,7 +1,11 @@
-<?php include "config.php"; ?>
+<?php
+include "config.php";
+include "header.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

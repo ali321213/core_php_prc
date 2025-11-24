@@ -16,7 +16,7 @@
         $result = $conn->query("SELECT * FROM persons WHERE user_id=" . $_SESSION['user_id']);
 
         while ($row = $result->fetch_assoc()) {
-            echo "<tr>
+        echo "<tr>
         <td>{$row['id']}</td>
         <td>{$row['name']}</td>
         <td>{$row['email']}</td>
@@ -32,7 +32,7 @@
                 <i class='bi bi-eye-fill'></i>
             </button>
         </td>
-    </tr>";
+        </tr>";
         }
         ?>
     </tbody>
