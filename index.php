@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // } else {
     //     $error = "Invalid login";
     // }
+
     if ($result && md5($password) === $result['password']) {
         $_SESSION['user_id'] = $result['id'];
         header("Location: home.php");
